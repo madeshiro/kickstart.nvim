@@ -913,6 +913,45 @@ require('lazy').setup({
     lazy = false,
     config = function()
       local colors = require('cyberdream.colors').default
+      -- Custom colors
+      local horizon = {
+        -- Orange tints
+        ridgeback = '#ea9356',
+        zodiac = '#e98c4c',
+        spiced_orange = '#e77e3e',
+        lava_pit = '#e56b30',
+        langoustine = '#e15229',
+
+        -- Red tints
+        vampire_red = '#d73c32',
+
+        -- Pink to purple tints
+        minted_blueberry = '#53245d',
+        purple_gown = '#53245d',
+        fading_horizon = '#462560',
+        her_highness = '#433671',
+
+        -- Blue tints
+        noble_knight = '#3d4d88',
+        mississippi_river = '#34669f',
+        honolulu_blue = '#297db3',
+        jacuzzi = '#267ead',
+        pristine_seas = '#1a6462',
+
+        -- Cyan to green tints,
+        peacock_pride = '#1a6462',
+        evergreen = '#0f5e42',
+        resplendent_growth = '#458d3c',
+
+        -- Yellow to orange tints
+        lime_twist = '#c9d72a',
+        mustard = '#d3b315',
+        tiger_king = '#d69719',
+        hotter_butter = '#e48e1b',
+        elder_ring_orange = '#e6861f',
+        bourbon_peach = '#e78531',
+      }
+
       require('cyberdream').setup {
         transparent = true,
         italic_comments = true,
@@ -922,7 +961,35 @@ require('lazy').setup({
 
         theme = {
           variant = 'default',
-          highlights = {},
+          highlights = {
+            -- Types
+            Boolean = {
+              fg = colors.orange,
+            },
+
+            -- Nvim gui
+            TabLine = {
+              fg = colors.purple,
+            },
+            Cursor = {
+              fg = colors.cyan,
+              bg = colors.bg,
+            },
+            -- filename (footer)
+            MiniStatuslineFilename = {
+              fg = horizon.lime_twist,
+              -- bg = '#1f4b4e',
+            },
+            -- Insert mode
+            MinistatuslineModeInsert = {
+              fg = horizon.ridgeback,
+              bg = colors.bg,
+            },
+            MinistatuslineModeVisual = {
+              fg = colors.green,
+              bg = colors.bg,
+            },
+          },
         },
       }
     end,
