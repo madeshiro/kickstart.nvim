@@ -584,6 +584,7 @@ require('lazy').setup({
         -- cmake = {},
         asm_lsp = {}, -- Assembly
         dockerls = {}, -- Dockerfile
+        jsonls = {},
         vhdl_ls = {}, -- VDHL
         -- gopls = {},
         pyright = {},
